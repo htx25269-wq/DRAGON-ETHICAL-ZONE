@@ -74,4 +74,39 @@
 <button onclick="run('Exploit Scanner')">Exploit Scan</button>
 
 <button onclick="run('Network Analyzer')">Network Tool</button>
-<button
+<button onclick="run('IP Tracker (FAKE)')">IP Tracker</button>
+<button onclick="run('DNS Lookup Tool')">DNS Lookup</button>
+<button onclick="run('Packet Sniffer Demo')">Sniffer</button>
+<button onclick="run('Payload Injector (FAKE)')">Payload Inject</button>
+<button onclick="run('System Breach Simulation')">System Breach</button>
+<button onclick="run('Cyber Attack Panel')">Attack Panel</button>
+<button onclick="run('Database Dump Tool')">DB Dump</button>
+<button onclick="run('Login Bypass Test')">Login Bypass</button>
+<button onclick="run('Shell Upload Simulation')">Shell Upload</button>
+
+<button onclick="run('Firewall Test Tool')">Firewall Test</button>
+<button onclick="run('Website Vulnerability Scan')">Vuln Scan</button>
+<button onclick="run('Code Injector')">Code Inject</button>
+<button onclick="run('Fake Terminal Access')">Terminal</button>
+<button onclick="run('System Info Grabber')">System Info</button>
+<button onclick="run('Exploit Builder')">Exploit Builder</button>
+<button onclick="run('Cyber Console')">Console</button>
+<button onclick="run('Security Analyzer')">Security Tool</button>
+<button onclick="run('Hacker Mode ON')">Hacker Mode</button>
+<button onclick="run('FULL SYSTEM TEST COMPLETE ✔')">Run All</button>
+
+</div>
+
+<p class="status" id="status">STATUS: READY</p>
+
+</div>
+
+<script>
+function run(msg){
+    document.getElementById("status").innerText = "STATUS: " + msg;
+    alert(msg);
+}
+</script>
+
+</body>
+</html>
