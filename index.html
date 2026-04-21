@@ -9,43 +9,45 @@
             background: black;
             color: #00ff00;
             font-family: monospace;
-            text-align: center;
+            overflow: hidden;
         }
 
         h1 {
+            text-align: center;
             margin-top: 20px;
-            font-size: 32px;
             text-shadow: 0 0 10px #00ff00;
         }
 
         .sub {
-            color: #ccc;
-            margin-bottom: 20px;
+            text-align: center;
+            color: #aaa;
         }
 
-        .box {
+        .panel {
             width: 90%;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 15px;
             border: 1px solid #00ff00;
             box-shadow: 0 0 20px #00ff00;
-            border-radius: 12px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 8px;
         }
 
         button {
-            padding: 10px;
+            padding: 8px;
+            font-size: 11px;
             background: black;
             color: #00ff00;
             border: 1px solid #00ff00;
             cursor: pointer;
-            font-size: 12px;
         }
 
         button:hover {
@@ -54,64 +56,74 @@
         }
 
         .status {
-            margin-top: 15px;
+            margin-top: 10px;
             color: #ccc;
+            text-align: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
     </style>
 </head>
 
 <body>
 
-<h1>💀 DRAZON ETHICAL ZONE</h1>
-<p class="sub">CYBER SECURITY LAB (DEMO ONLY)</p>
+<canvas id="matrix"></canvas>
 
-<div class="box">
+<h1>💀 DRAZON ETHICAL ZONE</h1>
+<p class="sub">PRO CYBER SECURITY DASHBOARD (DEMO ONLY)</p>
+
+<div class="panel">
 
 <div class="grid">
 
-<button onclick="run('SQL Injection Demo Loaded')">SQL Injection</button>
-<button onclick="run('XSS Simulation Started')">XSS Attack</button>
-<button onclick="run('Port Scanner Running')">Port Scan</button>
+<button onclick="run('SQL Injection Demo')">SQL Injection</button>
+<button onclick="run('XSS Simulation')">XSS Attack</button>
+<button onclick="run('Port Scanner')">Port Scan</button>
 
-<button onclick="run('Firewall Bypass Simulation')">Firewall Bypass</button>
-<button onclick="run('Brute Force Demo')">Brute Force</button>
+<button onclick="run('Firewall Bypass')">Firewall Bypass</button>
+<button onclick="run('Brute Force')">Brute Force</button>
 <button onclick="run('DDOS Simulation')">DDOS Tool</button>
 
-<button onclick="run('Website Cloner')">Web Cloner</button>
+<button onclick="run('Web Cloner')">Web Cloner</button>
 <button onclick="run('Keylogger Demo')">Keylogger</button>
-<button onclick="run('Admin Finder Tool')">Admin Finder</button>
+<button onclick="run('Admin Finder')">Admin Finder</button>
 
 <button onclick="run('Exploit Scanner')">Exploit Scan</button>
 <button onclick="run('Network Analyzer')">Network Tool</button>
-<button onclick="run('IP Tracker (FAKE)')">IP Tracker</button>
+<button onclick="run('IP Tracker')">IP Tracker</button>
 
-<button onclick="run('DNS Lookup Tool')">DNS Lookup</button>
-<button onclick="run('Packet Sniffer Demo')">Packet Sniffer</button>
+<button onclick="run('DNS Lookup')">DNS Lookup</button>
+<button onclick="run('Packet Sniffer')">Sniffer</button>
 <button onclick="run('Payload Injector')">Payload Inject</button>
 
-<button onclick="run('System Breach Simulation')">System Breach</button>
-<button onclick="run('Cyber Attack Panel')">Attack Panel</button>
-<button onclick="run('Database Dump (FAKE)')">DB Dump</button>
+<button onclick="run('System Breach')">System Breach</button>
+<button onclick="run('Attack Panel')">Attack Panel</button>
+<button onclick="run('DB Dump')">DB Dump</button>
 
-<button onclick="run('Login Bypass Test')">Login Bypass</button>
-<button onclick="run('Shell Upload Demo')">Shell Upload</button>
-<button onclick="run('Firewall Test Tool')">Firewall Test</button>
+<button onclick="run('Login Bypass')">Login Bypass</button>
+<button onclick="run('Shell Upload')">Shell Upload</button>
+<button onclick="run('Firewall Test')">Firewall Test</button>
 
-<button onclick="run('Vulnerability Scanner')">Vuln Scan</button>
+<button onclick="run('Vuln Scanner')">Vuln Scan</button>
 <button onclick="run('Code Injector')">Code Inject</button>
-<button onclick="run('Terminal Access')">Terminal</button>
+<button onclick="run('Terminal')">Terminal</button>
 
-<button onclick="run('System Info Grabber')">System Info</button>
+<button onclick="run('System Info')">System Info</button>
 <button onclick="run('Exploit Builder')">Exploit Builder</button>
 <button onclick="run('Cyber Console')">Console</button>
 
 <button onclick="run('Security Analyzer')">Security Tool</button>
 <button onclick="run('Hacker Mode ON')">Hacker Mode</button>
-<button onclick="run('FULL SYSTEM TEST COMPLETE ✔')">RUN ALL</button>
+<button onclick="run('FULL TEST COMPLETE ✔')">RUN ALL</button>
 
 </div>
 
-<p class="status" id="status">STATUS: READY</p>
+<p class="status" id="status">STATUS: SYSTEM READY</p>
 
 </div>
 
@@ -120,7 +132,42 @@ function run(msg){
     document.getElementById("status").innerText = "STATUS: " + msg;
     alert(msg);
 }
+
+// MATRIX EFFECT
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&@";
+letters = letters.split("");
+
+let fontSize = 14;
+let columns = canvas.width / fontSize;
+
+let drops = [];
+for (let x = 0; x < columns; x++) drops[x] = 1;
+
+function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff00";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        let text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+            drops[i] = 0;
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
 </script>
 
-</body>
-</html>
+</body
