@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Camera Site</title>
+    <meta charset="UTF-8">
+    <title>Camera Safe Demo</title>
 </head>
 <body>
 
-<h2>Camera Capture (User Consent)</h2>
+<h2>📸 Camera Demo (User Permission Required)</h2>
 
 <video id="video" autoplay playsinline></video>
-<br>
-<button onclick="takePhoto()">📸 Capture Photo</button>
+<br><br>
+<button onclick="takePhoto()">Capture Photo</button>
 
 <canvas id="canvas" style="display:none;"></canvas>
 
@@ -23,13 +24,16 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Camera start (permission required)
+// Camera open (permission required)
 navigator.mediaDevices.getUserMedia({ video: true })
 .then(stream => {
     video.srcObject = stream;
+})
+.catch(err => {
+    alert("Camera permission denied!");
 });
 
-// Only when user clicks button
+// User click required
 function takePhoto() {
     ctx.drawImage(video, 0, 0, 640, 480);
 
