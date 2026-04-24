@@ -8,19 +8,30 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: #dfe3ea;
+    font-family: 'Segoe UI', sans-serif;
+    background: #000;
+    color: white;
 }
 
+/* HEADER */
 .header {
-    background: black;
-    color: #00ffcc;
     text-align: center;
-    padding: 15px;
-    font-size: 22px;
-    font-weight: bold;
+    padding: 20px;
 }
 
+.logo {
+    font-size: 40px;
+    color: #00ffcc;
+}
+
+.title {
+    font-size: 22px;
+    color: #00ffcc;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* GRID */
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -28,64 +39,88 @@ body {
     padding: 20px;
 }
 
+/* CARD */
 .card {
-    background: #eef1f5;
+    background: #0a0a0a;
     border-radius: 20px;
     padding: 25px;
     text-align: center;
-    box-shadow: 5px 5px 15px #c5c8cc,
-                -5px -5px 15px #ffffff;
+    box-shadow: 0 0 10px #00ffcc;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #00ffcc;
 }
 
+/* ICON */
 .icon {
     font-size: 30px;
     margin-bottom: 10px;
 }
 
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 10px;
+    color: gray;
+    font-size: 12px;
+}
 </style>
+
+<script>
+function openPage(name){
+    alert(name + " section open hobe 😎");
+}
+</script>
+
 </head>
 
 <body>
 
-<div class="header">Dragon Ethical Zone</div>
+<div class="header">
+    <div class="logo">🐉</div>
+    <div class="title">DRAGON ETHICAL ZONE</div>
+</div>
 
 <div class="container">
 
-<div class="card">
+<div class="card" onclick="openPage('Termux')">
     <div class="icon">💻</div>
     টার্মাক্স
 </div>
 
-<div class="card">
+<div class="card" onclick="openPage('Notepad')">
     <div class="icon">📝</div>
     নোটপ্যাড
 </div>
 
-<div class="card">
+<div class="card" onclick="openPage('Nickname')">
     <div class="icon">👤</div>
     নিকনেম
 </div>
 
-<div class="card">
+<div class="card" onclick="openPage('Link Scanner')">
     <div class="icon">🛡️</div>
     লিংক স্ক্যানার
 </div>
 
-<div class="card">
+<div class="card" onclick="openPage('Hashtag')">
     <div class="icon">#️⃣</div>
     হ্যাশট্যাগ
 </div>
 
-<div class="card">
+<div class="card" onclick="openPage('Settings')">
     <div class="icon">⚙️</div>
     সেটিংস
 </div>
 
+</div>
+
+<div class="footer">
+    Created by Dip ⚡
 </div>
 
 </body>
