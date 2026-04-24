@@ -1,186 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DRAZON ETHICAL ZONE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon Ethical Zone</title>
 
-    <style>
-        body {
-            margin: 0;
-            background: black;
-            color: #00ff00;
-            font-family: monospace;
-            overflow: hidden;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #dfe3ea;
+}
 
-        h1 {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 36px;
-            text-shadow: 0 0 15px #00ff00;
-            letter-spacing: 2px;
-        }
+.header {
+    background: black;
+    color: #00ffcc;
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
 
-        .subtitle {
-            text-align: center;
-            color: #888;
-            margin-bottom: 10px;
-        }
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
 
-        .panel {
-            width: 92%;
-            max-width: 1000px;
-            margin: auto;
-            padding: 15px;
-            border: 1px solid #00ff00;
-            box-shadow: 0 0 25px #00ff00;
-            border-radius: 12px;
-            background: rgba(0,0,0,0.6);
-            position: relative;
-            z-index: 2;
-        }
+.card {
+    background: #eef1f5;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 5px 5px 15px #c5c8cc,
+                -5px -5px 15px #ffffff;
+    transition: 0.3s;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
+.card:hover {
+    transform: scale(1.05);
+}
 
-        button {
-            padding: 9px;
-            font-size: 11px;
-            background: black;
-            color: #00ff00;
-            border: 1px solid #00ff00;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+.icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
 
-        button:hover {
-            background: #00ff00;
-            color: black;
-        }
-
-        .status {
-            text-align: center;
-            margin-top: 10px;
-            color: #ccc;
-        }
-
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-
-        .loading {
-            text-align: center;
-            color: #777;
-            font-size: 12px;
-        }
-    </style>
+</style>
 </head>
 
 <body>
 
-<canvas id="matrix"></canvas>
+<div class="header">Dragon Ethical Zone</div>
 
-<h1>💀 DRAZON ETHICAL ZONE</h1>
-<p class="subtitle">ULTRA CYBER SECURITY DASHBOARD (SIMULATION ONLY)</p>
+<div class="container">
 
-<div class="panel">
-
-<div class="grid">
-
-<button onclick="run('SQL Injection Simulation Loaded')">SQL Injection</button>
-<button onclick="run('XSS Simulation Active')">XSS Attack</button>
-<button onclick="run('Port Scanner Running')">Port Scan</button>
-
-<button onclick="run('Firewall Bypass Sim')">Firewall Bypass</button>
-<button onclick="run('Brute Force Demo')">Brute Force</button>
-<button onclick="run('DDOS Simulation')">DDOS Tool</button>
-
-<button onclick="run('Web Cloner Active')">Web Cloner</button>
-<button onclick="run('Keylogger Simulation')">Keylogger</button>
-<button onclick="run('Admin Finder Tool')">Admin Finder</button>
-
-<button onclick="run('Exploit Scanner Running')">Exploit Scan</button>
-<button onclick="run('Network Analyzer')">Network Tool</button>
-<button onclick="run('IP Tracker Fake')">IP Tracker</button>
-
-<button onclick="run('DNS Lookup Tool')">DNS Lookup</button>
-<button onclick="run('Packet Sniffer Demo')">Sniffer</button>
-<button onclick="run('Payload Injector Demo')">Payload Inject</button>
-
-<button onclick="run('System Breach Simulation')">System Breach</button>
-<button onclick="run('Attack Panel Loaded')">Attack Panel</button>
-<button onclick="run('Database Dump Fake')">DB Dump</button>
-
-<button onclick="run('Login Bypass Test')">Login Bypass</button>
-<button onclick="run('Shell Upload Demo')">Shell Upload</button>
-<button onclick="run('Firewall Test Tool')">Firewall Test</button>
-
-<button onclick="run('Vulnerability Scanner')">Vuln Scan</button>
-<button onclick="run('Code Injector')">Code Inject</button>
-<button onclick="run('Terminal Access')">Terminal</button>
-
-<button onclick="run('System Info Grabber')">System Info</button>
-<button onclick="run('Exploit Builder')">Exploit Builder</button>
-<button onclick="run('Cyber Console')">Console</button>
-
-<button onclick="run('Security Analyzer')">Security Tool</button>
-<button onclick="run('Hacker Mode ON')">Hacker Mode</button>
-<button onclick="run('FULL SYSTEM TEST COMPLETE ✔')">RUN ALL</button>
-
+<div class="card">
+    <div class="icon">💻</div>
+    টার্মাক্স
 </div>
 
-<p class="status" id="status">STATUS: SYSTEM READY</p>
-<p class="loading">INITIALIZING CORE SYSTEM... ███▒▒▒▒▒▒▒▒</p>
-
+<div class="card">
+    <div class="icon">📝</div>
+    নোটপ্যাড
 </div>
 
-<script>
-function run(msg){
-    document.getElementById("status").innerText = "STATUS: " + msg;
-    alert(msg);
-}
+<div class="card">
+    <div class="icon">👤</div>
+    নিকনেম
+</div>
 
-/* MATRIX EFFECT */
-const canvas = document.getElementById("matrix");
-const ctx = canvas.getContext("2d");
+<div class="card">
+    <div class="icon">🛡️</div>
+    লিংক স্ক্যানার
+</div>
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+<div class="card">
+    <div class="icon">#️⃣</div>
+    হ্যাশট্যাগ
+</div>
 
-let chars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*";
-chars = chars.split("");
+<div class="card">
+    <div class="icon">⚙️</div>
+    সেটিংস
+</div>
 
-let fontSize = 14;
-let columns = canvas.width / fontSize;
-
-let drops = [];
-for (let i = 0; i < columns; i++) drops[i] = 1;
-
-function draw(){
-    ctx.fillStyle = "rgba(0,0,0,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "#00ff00";
-    ctx.font = fontSize + "px monospace";
-
-    for(let i=0;i<drops.length;i++){
-        let text = chars[Math.floor(Math.random()*chars.length)];
-        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-
-        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
-            drops[i] = 0;
-
-        drops[i]++;
-    }
-}
-
-setInterval(draw,33);
-</script>
+</div>
 
 </body>
 </html>
