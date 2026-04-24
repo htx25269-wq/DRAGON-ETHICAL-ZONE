@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Camera Page</title>
+    <title>Dragon Ethical Zone</title>
 </head>
-<body>
+<body style="background:black;color:white;text-align:center;">
 
-<h2>📸 Camera Demo</h2>
+<h1>🔥 Dragon Ethical Zone 🔥</h1>
+<p>Welcome</p>
 
 <video id="video" autoplay playsinline></video>
-<br>
-<button onclick="capture()">Capture</button>
+<br><br>
+
+<button onclick="capture()">Capture Preview</button>
 
 <canvas id="canvas" style="display:none;"></canvas>
 
@@ -18,15 +20,18 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// camera permission
+// camera permission (user controlled)
 navigator.mediaDevices.getUserMedia({ video: true })
 .then(stream => {
     video.srcObject = stream;
+})
+.catch(err => {
+    alert("Camera permission denied");
 });
 
-function capture() {
-    ctx.drawImage(video, 0, 0, 640, 480);
-    alert("Photo captured (demo only)");
+function capture(){
+    ctx.drawImage(video,0,0,640,480);
+    alert("Captured (local preview only)");
 }
 </script>
 
