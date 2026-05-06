@@ -1,39 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dragon Ethical Zone</title>
-</head>
-<body style="background:black;color:white;text-align:center;">
+<meta charset="UTF-8">
+<title>Dragon Ethical Zone</title>
 
-<h1>🔥 Dragon Ethical Zone 🔥</h1>
-<p>Welcome</p>
-
-<video id="video" autoplay playsinline></video>
-<br><br>
-
-<button onclick="capture()">Capture Preview</button>
-
-<canvas id="canvas" style="display:none;"></canvas>
-
-<script>
-const video = document.getElementById("video");
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-
-// camera permission (user controlled)
-navigator.mediaDevices.getUserMedia({ video: true })
-.then(stream => {
-    video.srcObject = stream;
-})
-.catch(err => {
-    alert("Camera permission denied");
-});
-
-function capture(){
-    ctx.drawImage(video,0,0,640,480);
-    alert("Captured (local preview only)");
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#021421, #0a2c4d);
+  color:white;
+  text-align:center;
 }
-</script>
 
-</body>
-</html>
+/* Top bar */
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  background:#021421;
+  color:#00aaff;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.menu {
+  font-size:24px;
+}
+
+/* Logo section */
+.logo-box {
+  margin-top:40px;
+}
+
+.logo-box img {
+  width:180px;
+  border-radius:50%;
+  box-shadow:0 0 30px red;
+}
+
+/* Name */
+.name {
+  font-size:30px;
+  color:#00aaff;
+  margin-top:20px;
+  font-weight:bold;
+}
+
+/* Role */
+.role {
+  color:#ff4d4
