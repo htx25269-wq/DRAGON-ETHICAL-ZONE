@@ -34,24 +34,24 @@ body{
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
     color:white;
     font-size:20px;
     font-weight:700;
 }
 
-/* লোগো ইমেজ স্টাইল (Navbar) */
+/* Navbar Logo Style */
 .logo img{
     width:45px;
     height:45px;
     border-radius: 50%;
-    border: 1px solid #ff1e1e;
-    box-shadow: 0 0 10px #ff1e1e;
+    border: 2px solid #ff1e1e;
 }
 
 .menu{
     color:#00aaff;
     font-size:36px;
+    cursor: pointer;
 }
 
 .hero{
@@ -70,23 +70,22 @@ body{
     border-radius:10px;
 }
 
-.profile{
+.profile-container{
     width:280px;
     height:280px;
     border-radius:50%;
     margin:auto;
     border:8px solid #ff1e1e;
     background:#000;
-    overflow: hidden; /* ইমেজ গোল রাখার জন্য */
+    overflow: hidden; 
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
     box-shadow:0 0 50px #ff1e1e;
 }
 
-/* প্রোফাইল এর ভেতরের লোগো */
-.profile img{
+/* Main Profile Image */
+.profile-container img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -97,6 +96,7 @@ body{
     font-size:58px;
     color:#1d8fff;
     font-weight:700;
+    text-transform: uppercase;
 }
 
 .role{
@@ -110,8 +110,8 @@ body{
     max-width:950px;
     margin:40px auto;
     padding:20px;
-    font-size:26px;
-    line-height:2;
+    font-size:24px;
+    line-height:1.8;
     color:#d9d9d9;
 }
 
@@ -132,6 +132,7 @@ body{
     border:1px solid #00aaff;
     box-shadow:0 0 15px rgba(0,170,255,0.5);
     font-size:18px;
+    transition: 0.3s;
 }
 
 .social{
@@ -163,12 +164,12 @@ body{
 }
 
 .social a:hover, .skill:hover{
-    transform:scale(1.05);
+    transform:scale(1.1);
 }
 
 .footer{
     background:#07101d;
-    padding:20px;
+    padding:25px;
     text-align:center;
     color:#00aaff;
     font-size:18px;
@@ -180,15 +181,14 @@ body{
 
 <body>
 
-<!-- 🔊 BACKGROUND MUSIC -->
 <audio id="bgMusic" loop>
     <source src="https://cdn.pixabay.com/download/audio/2022/10/16/audio_c8c8a3c7c5.mp3?filename=dark-techno-ambient-118193.mp3" type="audio/mpeg">
 </audio>
 
 <div class="navbar">
     <div class="logo">
-        <!-- আপলোড করা লোগো এখানে বসানো হয়েছে -->
-        <img src="1000044511.jpg" alt="Dragon Logo">
+        <!-- updated file name here -->
+        <img src="1000044511_2.jpg" alt="Logo">
         Dragon Ethical Zone
     </div>
     <div class="menu">☰</div>
@@ -196,25 +196,22 @@ body{
 
 <div class="hero">
     <div class="grid-bg">
-        <!-- প্রোফাইল এরিয়াতে অরিজিনাল লোগো -->
-        <div class="profile">
-            <img src="1000044511.jpg" alt="Dragon Ethical Zone">
+        <!-- updated file name here -->
+        <div class="profile-container">
+            <img src="1000044511_2.jpg" alt="Dragon Ethical Zone Profile">
         </div>
 
-        <div class="name">DRAGON ETHICAL ZONE</div>
+        <div class="name">Dragon Ethical Zone</div>
         <div class="role">Owner & Chief Executive Officer</div>
 
         <div class="about">
-            🌐 I'm Dip Chowdhury,<br>
+            🌐 I'm <b>Dip Chowdhury</b>,<br>
             Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.<br><br>
-            <b>"We Secure The Digital World"</b><br><br>
+            <i>"We Secure The Digital World"</i><br><br>
             I specialize in:<br><br>
-            • Ethical Hacking<br>
-            • Cyber Security Research<br>
-            • Vulnerability Testing<br>
-            • Bug Hunting<br>
-            • Web Development<br>
-            • Programming
+            • Ethical Hacking • Cyber Security Research<br>
+            • Vulnerability Testing • Bug Hunting<br>
+            • Web Development • Programming
         </div>
 
         <div class="social">
@@ -245,8 +242,7 @@ function speakWelcome(){
     let voices = speechSynthesis.getVoices();
     let voice = voices.find(v =>
         v.name.toLowerCase().includes("male") ||
-        v.name.toLowerCase().includes("david") ||
-        v.name.toLowerCase().includes("english")
+        v.name.toLowerCase().includes("david")
     );
 
     if(voice) msg.voice = voice;
