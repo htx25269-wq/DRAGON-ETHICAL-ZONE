@@ -2,44 +2,190 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dragon Ethical Zone</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(#021421, #0a2c4d);
-  color:white;
-  text-align:center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-/* Top bar */
-.header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 20px;
-  background:#021421;
-  color:#00aaff;
-  font-weight:bold;
-  font-size:18px;
+body{
+    background:#07111f;
+    color:white;
+    overflow-x:hidden;
 }
 
-.menu {
-  font-size:24px;
+.navbar{
+    width:100%;
+    background:#07101d;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    box-shadow:0 0 20px rgba(0,140,255,0.4);
 }
 
-/* Hero */
-.hero {
-  padding:50px 10px 30px;
+.logo{
+    color:#118dff;
+    font-size:32px;
+    font-weight:700;
+    text-shadow:0 0 12px #118dff;
 }
 
-.name {
-  font-size:32px;
-  color:#00aaff;
-  margin-top:15px;
-  font-weight:bold;
+.menu{
+    color:#00aaff;
+    font-size:36px;
 }
 
-.role {
-  color:#ff
+.hero{
+    min-height:100vh;
+    background:linear-gradient(to bottom,#149bff,#07111f);
+    text-align:center;
+    padding:40px 20px;
+}
+
+.grid-bg{
+    background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size:40px 40px;
+    padding:40px 0;
+    border-radius:10px;
+}
+
+.profile{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    margin:auto;
+    border:10px solid #ff3b5f;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#00ff88;
+    font-size:55px;
+    font-weight:bold;
+    box-shadow:0 0 40px #ff3b5f;
+}
+
+.name{
+    margin-top:35px;
+    font-size:58px;
+    color:#1d8fff;
+    font-weight:700;
+}
+
+.role{
+    margin-top:10px;
+    font-size:30px;
+    color:#ff7272;
+    font-weight:600;
+}
+
+.about{
+    max-width:950px;
+    margin:40px auto;
+    padding:20px;
+    font-size:26px;
+    line-height:2;
+    color:#d9d9d9;
+}
+
+.about b{
+    color:white;
+}
+
+.skills{
+    margin-top:30px;
+}
+
+.skill{
+    display:inline-block;
+    padding:14px 24px;
+    margin:10px;
+    border-radius:12px;
+    background:#0c1d33;
+    border:1px solid #00aaff;
+    box-shadow:0 0 15px rgba(0,170,255,0.5);
+    font-size:18px;
+}
+
+.footer{
+    background:#07101d;
+    padding:20px;
+    text-align:center;
+    color:#00aaff;
+    font-size:18px;
+    margin-top:50px;
+    box-shadow:0 0 15px rgba(0,170,255,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">Dragon Ethical Zone</div>
+    <div class="menu">☰</div>
+</div>
+
+<div class="hero">
+
+<div class="grid-bg">
+
+<div class="profile">
+    DEZ
+</div>
+
+<div class="name">
+    Dip Chowdhury
+</div>
+
+<div class="role">
+    Owner & Chief Executive Officer
+</div>
+
+<div class="about">
+🌐 I'm Dip Chowdhury,<br>
+Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.
+<br><br>
+
+<b>"We Secure The Digital World"</b>
+
+<br><br>
+
+I specialize in:
+<br><br>
+
+• Ethical Hacking<br>
+• Cyber Security Research<br>
+• Vulnerability Testing<br>
+• Bug Hunting<br>
+• Web Development<br>
+• Programming
+</div>
+
+<div class="skills">
+    <div class="skill">Cyber Security</div>
+    <div class="skill">Ethical Hacking</div>
+    <div class="skill">Bug Hunting</div>
+    <div class="skill">Web Development</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+    Created By Dip © 2026
+</div>
+
+</body>
+</html>
