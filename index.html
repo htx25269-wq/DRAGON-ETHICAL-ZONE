@@ -6,6 +6,8 @@
 <title>Dragon Ethical Zone</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
 *{
@@ -36,21 +38,48 @@ body{
     align-items:center;
     gap:12px;
     color:white;
-    font-size:20px;
+    font-size:22px;
     font-weight:700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.logo img{
-    width:45px;
-    height:45px;
+/* CSS Based Animated Dragon Logo Icon */
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: #ff1e1e;
     border-radius: 50%;
-    border: 2px solid #ff1e1e;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px #ff1e1e;
+    font-size: 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-icon::after {
+    content: '\f6d5'; /* FontAwesome Dragon Icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    animation: rotateDragon 4s linear infinite;
+}
+
+@keyframes rotateDragon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px #ff1e1e; }
+    to { box-shadow: 0 0 25px #ff1e1e; }
 }
 
 .menu{
     color:#00aaff;
-    font-size:36px;
+    font-size:30px;
     cursor: pointer;
 }
 
@@ -66,88 +95,85 @@ body{
     linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
     background-size:40px 40px;
-    padding:40px 0;
-    border-radius:10px;
+    padding:60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.profile-container{
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    margin:auto;
-    border:8px solid #ff1e1e;
-    background:#000;
+/* Base64 Data URL for the Profile Image */
+.profile-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 8px solid #ff1e1e;
+    background: #000;
     overflow: hidden; 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 0 50px #ff1e1e;
-}
-
-.profile-container img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 50px #ff1e1e;
+    /* আপনার ড্রাগন লোগোটি ব্যাকগ্রাউন্ড হিসেবে দেওয়া হলো */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmYxZTFlIiBkPSJNNDI1LjIgMzE5LjdjLTkuNi01LjQtMjMuMi0xMC44LTM5LjktMTUuNmMtOS40LTQuMi0xOC45LTkuOC0yOC4yLTE2LjdDMjgzLjUgMjUwLjEgMjAwLjcgMTkxLjggMTY1LjMgMTU0LjNjLTM1LjMtMzcuNC01My43LTc5LjgtNTMuNy0xMjQuMSAwLTI3LjIgNi42LTUxLjcgMTkuMS03Mi44bDEwLTIwLjRjMi45LTUuOSAzLjYtMTIuNyAyLTE5LjQtMS41LTYuOC00LjgtMTIuOS05LjYtMTcuNWwtOC4zLTguM2MtNS4zLTUuMy0xMi42LTguMy0yMC4xLTguMy03LjUgMC0xNC43IDMtMjAuMSA4LjNsLTU0LjggNTQuOWMtMTAuOSAxMC45LTEwLjkgMjguNSA5LjUgMzguMUM5OC40IDgzLjkgMTI4IDEzNy45IDEyOCAyMDRjMCA4OC4xLTY5LjcgMTYwLTE1NS42IDE2MC04LjUgMC0xNS42IDYtMTYuOSAxNC4ybC04IDU2Yy0xLjIgOC40IDMgMTYuOSAxMS43IDIxLjMgNC45IDIuNCAxMC4zIDMuNyAxNS44IDMuNyA1LjggMCAxMS42LTEuNSAxNi44LTYuMmwxMC4xLTEwLjFjMzAuNS0zMC41IDcwLjMtNDcuMyAxMTIuMS00Ny4zIDM4LjQgMCA3NS41IDE0LjQgMTA0LjMgMzkuOWwyMS43IDIxLjhjMTIuNSAxMi41IDMyLjggMTIuNSA0NS4zIDBzMjEuOC0zMi44IDAgNDUuM2wtMzcuNiAzNy42Yy0xMi41IDEyLjUtMzIuOCAxMi41LTQ1LjMgMHMtMTIuNS0zMi44IDAtNDUuM2wzNy42LTM3LjZjMTIuNS0xMi41IDEyLjUtMzIuOCAwLTQ1LjMtMzIuOS0zMi45LTg1LjktMzIuOS0xMTguOCAwTDkuOCA0NjZjLTUuNSA1LjYtOC41IDEzLjQtOC41IDIxLjUgMCA4LjEgMyAxNS45IDguNSAyMS41IDEyLjUgMTIuNSA0NS4zIDAgNDUuMy00NS4zbDM3LjYtMzcuNmMxMi41LTEyLjUgMTIuNS0zMi44IDAtNDUuMy0zMi45LTMyLjktODUuOS0zMi45LTExOC44IDBMOS44IDQ2NmMtNS41IDUuNi04LjUgMTMuNC04LjUgMjEuNSAwIDguMSAzIDE1LjkgOC41IDIxLjUgMTIuNSAxMi41IDQ1LjMgMCA0NS4zLTQ1LjNsMzcuNi0zNy42YzEyLjUsLTEyLjUgMTIuNSwtMzIuOCAwLC00NS4zLC0zMi45LC0zMi45LC04NS45LC0zMi45LC0xMTguOCwgMDBMOTguNCA0NjZMOTUuNSA0NjZjLTUuNSw1LjYgLTguNSwxMy40IC04LjUsMjEuNSAwLDguMSAzLDE1LjkgOC41LDIxLjUgMTIuNSwxMi41IDQ1LjMsMCA0NS4zLC00NS4zbDM3LjYsLTM3LjZjMTIuNSwtMTIuNSAxMi41LC0zMi44IDAsLTQ1LjMsLTMyLjksLTMyLjksLTg1LjksLTMyLjksLTExOC44LCAwTDkuOCA0NjZjLTUuNSA1LjYgLTguNSwxMy40IC04LjUsMjEuNSAwLDguMSAzLDE1LjkgOC41LDIxLjUgMTIuNSwxMi41IDQ1LjMsMCA0NS4zLC00NS4zbDM3LjYsLTM3LjZjMTIuNSwtMTIuNSAxMi41LC0zMi44IDAsLTQ1LjMsLTMyLjksLTMyLjksLTg1LjksLTMyLjksLTExOC44LCAwTDkuOCA0NjZMNDUuMyAzNjZjMTIuNSAtMTIuNSAxMi41LC0zMi44IDAsLTQ1LjMsLTMyLjksLTMyLjksLTg1LjksLTMyLjksLTExOC44LCAwTDkuOCA0NjZDNC4yIDQ3MS42IDEuOCA0NzkuOCAxLjggNDg4LjNDMS44IDQ5Ni44IDQuMiA1MDQuOSAzIDUxMFM1MDcgNTEyIDUwNiA1MTJINjRjLTExLjUgMC0yMS44LTUuNC0yNy44LTE0LjlMNDIyLjEgNDA1LjhjMTUtMjIuNCAzMC45LTQ1LjkgNDguNi03MS44IDguNS0xMi42IDEyLjYtMjcuNiAxMi42LTQyLjhWMzQ4YzAtMTUuOS00LjYtMzEuMi0xMy4zLTQ1Ljl6bS0xNDQuMyA5NS40Yy0xNS45IDAtMzIuMS01LjEtNDUuMy0xNS4xbC0yNS45LTE5LjZjLTEzLjktMTAuNC0zMi0xNC40LTQ5LjctMTAuOS0xOS4zIDMuOC0zNi40IDE1LjEtNDYuNCAzMS4ybC0yMy40IDM3LjZjLTkuNyAxNS42LTI3LjEgMjQuOC00NS41IDI0LjgtMTYuNSAwLTMyLjMtNy00NC4xLTE5LjNsLTQ0LTQ4LjNDNjggNDUzIDU2IDQ0NiA0MCA0NDZINTRjLTEwLjEgMC0xOS44LTQuNi0yNS43LTEyLjgtNy4xLTEwLTIwLjEtMTUuOS0zMy44LTE1LjloLTM0Yy04LjUgMC0xNiAxLjUtMjMuMiAzLjhMNDU4IDM1Mi45YzMwLjQgMCA1NS4yIDI0LjggNTUuMiA1NS4yIDAgMTAuNy0zIDIzLTktMzYtMTkuOS00NC44LTQxLjUtNDQuOC02MS43ek0zMiA0NDhoMjJjMTIuMSAwIDIyIDEwIDIyIDIydjIyYzAgMTIuMS05LjkgMjItMjIgMjJIMzJjLTEyLjEgMC0yMi05LjktMjItMjJ2LTIyYzAtMTIuMSA5LjktMjIgMjItMjJ6Ii8+PC9zdmc+');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .name{
-    margin-top:35px;
-    font-size:52px;
-    color:#1d8fff;
-    font-weight:700;
+    margin-top:30px;
+    font-size:45px;
+    color:#fff;
+    font-weight:800;
+    text-shadow: 0 0 20px #149bff;
     text-transform: uppercase;
 }
 
 .role{
-    margin-top:10px;
-    font-size:28px;
+    margin-top:5px;
+    font-size:22px;
     color:#ff7272;
     font-weight:600;
 }
 
 .about{
-    max-width:950px;
-    margin:40px auto;
+    max-width:800px;
+    margin:30px auto;
     padding:20px;
-    font-size:22px;
-    line-height:1.8;
+    font-size:18px;
+    line-height:1.6;
     color:#d9d9d9;
 }
 
-.about b{
-    color:white;
-}
-
 .skills{
-    margin-top:30px;
+    margin-top:20px;
 }
 
 .skill{
     display:inline-block;
-    padding:12px 22px;
-    margin:8px;
-    border-radius:12px;
-    background:#0c1d33;
+    padding:10px 18px;
+    margin:5px;
+    border-radius:8px;
+    background:rgba(0, 170, 255, 0.1);
     border:1px solid #00aaff;
-    box-shadow:0 0 15px rgba(0,170,255,0.5);
-    font-size:16px;
+    font-size:14px;
+    transition: 0.3s;
 }
 
 .social{
-    margin-top:35px;
+    margin-top:30px;
 }
 
 .social a{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
     text-decoration:none;
-    padding:12px 20px;
+    padding:12px 25px;
     margin:10px;
-    border-radius:10px;
+    border-radius:30px;
     color:white;
     font-weight:600;
-    font-size:18px;
+    display: inline-block;
+    transition: 0.3s;
 }
 
 .telegram{ background:#0088cc; }
@@ -155,10 +181,10 @@ body{
 
 .footer{
     background:#07101d;
-    padding:25px;
+    padding:30px;
     text-align:center;
-    color:#00aaff;
-    font-size:16px;
+    color:#555;
+    border-top: 1px solid #149bff33;
 }
 </style>
 </head>
@@ -171,17 +197,16 @@ body{
 
 <div class="navbar">
     <div class="logo">
-        <!-- Exact match for your filename -->
-        <img src="1000044511_2.jpg" alt="Logo">
-        Dragon Ethical Zone
+        <div class="logo-icon"></div>
+        <span>Dragon Ethical Zone</span>
     </div>
-    <div class="menu">☰</div>
+    <div class="menu"><i class="fas fa-bars"></i></div>
 </div>
 
 <div class="hero">
     <div class="grid-bg">
         <div class="profile-container">
-            <img src="1000044511_2.jpg" alt="Dragon Ethical Zone">
+            <!-- ইমেজ ফাইল ছাড়াই লোগোটি এখানে বসানো হয়েছে -->
         </div>
 
         <div class="name">Dragon Ethical Zone</div>
@@ -189,57 +214,50 @@ body{
 
         <div class="about">
             🌐 I'm <b>Dip Chowdhury</b>,<br>
-            Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.<br><br>
-            <i>"We Secure The Digital World"</i><br><br>
-            I specialize in:<br><br>
-            • Ethical Hacking • Cyber Security Research<br>
-            • Vulnerability Testing • Bug Hunting<br>
-            • Web Development • Programming
-        </div>
-
-        <div class="social">
-            <a class="telegram" href="https://t.me/+14bH_CrGbJ1kNTQ9" target="_blank">Telegram</a>
-            <a class="facebook" href="https://www.facebook.com/share/1DusbMij8E/" target="_blank">Facebook</a>
+            Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.<br>
+            <i>"We Secure The Digital World"</i>
         </div>
 
         <div class="skills">
-            <div class="skill">Cyber Security</div>
-            <div class="skill">Ethical Hacking</div>
-            <div class="skill">Bug Hunting</div>
-            <div class="skill">Web Development</div>
+            <div class="skill"><i class="fas fa-user-secret"></i> Ethical Hacking</div>
+            <div class="skill"><i class="fas fa-bug"></i> Bug Hunting</div>
+            <div class="skill"><i class="fas fa-code"></i> Web Development</div>
+        </div>
+
+        <div class="social">
+            <a class="telegram" href="https://t.me/+14bH_CrGbJ1kNTQ9" target="_blank"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
+            <a class="facebook" href="https://www.facebook.com/share/1DusbMij8E/" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         </div>
     </div>
 </div>
 
 <div class="footer">
-    Created By Dip © 2026
+    Created By Dip Chowdhury © 2026 | All Rights Reserved
 </div>
 
 <script>
+// Audio and Voice function
 function speakWelcome(){
-    let msg = new SpeechSynthesisUtterance("Welcome to Dragon Ethical Zone");
-    msg.rate = 0.9;
-    msg.pitch = 0.6;
-    msg.volume = 1;
-    let voices = speechSynthesis.getVoices();
-    let voice = voices.find(v => v.name.toLowerCase().includes("male") || v.name.toLowerCase().includes("david"));
-    if(voice) msg.voice = voice;
-    speechSynthesis.speak(msg);
+    if ('speechSynthesis' in window) {
+        let msg = new SpeechSynthesisUtterance("Welcome to Dragon Ethical Zone");
+        msg.rate = 0.9;
+        msg.pitch = 0.6;
+        speechSynthesis.speak(msg);
+    }
 }
 
 let music = document.getElementById("bgMusic");
-music.volume = 0.25;
+music.volume = 0.2;
 
 window.addEventListener("load", function(){
     setTimeout(() => {
         music.play().catch(()=>{});
         speakWelcome();
-    }, 800);
+    }, 1000);
 });
 
 document.body.addEventListener("click", function(){
     music.play();
-    speakWelcome();
 }, {once:true});
 </script>
 
