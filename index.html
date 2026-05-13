@@ -31,7 +31,6 @@ body{
     box-shadow:0 0 20px rgba(0,140,255,0.4);
 }
 
-/* 🔥 UPDATED LOGO AREA */
 .logo{
     display:flex;
     align-items:center;
@@ -41,11 +40,13 @@ body{
     font-weight:700;
 }
 
-/* small dragon icon */
-.logo svg{
-    width:30px;
-    height:30px;
-    filter:drop-shadow(0 0 8px red);
+/* লোগো ইমেজ স্টাইল (Navbar) */
+.logo img{
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+    border: 1px solid #ff1e1e;
+    box-shadow: 0 0 10px #ff1e1e;
 }
 
 .menu{
@@ -70,33 +71,25 @@ body{
 }
 
 .profile{
-    width:260px;
-    height:260px;
+    width:280px;
+    height:280px;
     border-radius:50%;
     margin:auto;
-    border:10px solid #ff1e1e;
+    border:8px solid #ff1e1e;
     background:#000;
+    overflow: hidden; /* ইমেজ গোল রাখার জন্য */
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:10px;
-    box-shadow:0 0 40px #ff1e1e;
+    box-shadow:0 0 50px #ff1e1e;
 }
 
-.dragon svg{
-    width:120px;
-    height:120px;
-    filter:drop-shadow(0 0 10px #ff0000);
-}
-
-.dragon-text{
-    font-size:16px;
-    font-weight:700;
-    color:#ff2a2a;
-    text-shadow:0 0 10px #ff0000;
-    letter-spacing:2px;
-    text-align:center;
+/* প্রোফাইল এর ভেতরের লোগো */
+.profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .name{
@@ -169,11 +162,7 @@ body{
     box-shadow:0 0 15px rgba(24,119,242,0.6);
 }
 
-.social a:hover{
-    transform:scale(1.05);
-}
-
-.skill:hover{
+.social a:hover, .skill:hover{
     transform:scale(1.05);
 }
 
@@ -197,110 +186,70 @@ body{
 </audio>
 
 <div class="navbar">
-
-    <!-- 🔥 RED DRAGON LOGO IN NAVBAR -->
     <div class="logo">
-        <svg viewBox="0 0 24 24">
-            <path d="M12 2C9 5 9 9 12 12C15 9 15 5 12 2Z" fill="#ff0000"/>
-            <path d="M4 13C6 10 9 10 12 12C9 14 7 17 8 21C5 19 3 16 4 13Z" fill="#b30000"/>
-            <path d="M20 13C18 10 15 10 12 12C15 14 17 17 16 21C19 19 21 16 20 13Z" fill="#ff3b3b"/>
-            <circle cx="12" cy="11" r="1.2" fill="white"/>
-        </svg>
+        <!-- আপলোড করা লোগো এখানে বসানো হয়েছে -->
+        <img src="1000044511.jpg" alt="Dragon Logo">
         Dragon Ethical Zone
     </div>
-
     <div class="menu">☰</div>
 </div>
 
 <div class="hero">
+    <div class="grid-bg">
+        <!-- প্রোফাইল এরিয়াতে অরিজিনাল লোগো -->
+        <div class="profile">
+            <img src="1000044511.jpg" alt="Dragon Ethical Zone">
+        </div>
 
-<div class="grid-bg">
+        <div class="name">DRAGON ETHICAL ZONE</div>
+        <div class="role">Owner & Chief Executive Officer</div>
 
-<div class="profile">
+        <div class="about">
+            🌐 I'm Dip Chowdhury,<br>
+            Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.<br><br>
+            <b>"We Secure The Digital World"</b><br><br>
+            I specialize in:<br><br>
+            • Ethical Hacking<br>
+            • Cyber Security Research<br>
+            • Vulnerability Testing<br>
+            • Bug Hunting<br>
+            • Web Development<br>
+            • Programming
+        </div>
 
-<div class="dragon">
-<svg viewBox="0 0 24 24" fill="none">
-    <path d="M12 2C9 5 9 9 12 12C15 9 15 5 12 2Z" fill="#ff1e1e"/>
-    <path d="M4 13C6 10 9 10 12 12C9 14 7 17 8 21C5 19 3 16 4 13Z" fill="#b30000"/>
-    <path d="M20 13C18 10 15 10 12 12C15 14 17 17 16 21C19 19 21 16 20 13Z" fill="#ff3b3b"/>
-    <circle cx="12" cy="11" r="1.2" fill="white"/>
-</svg>
-</div>
+        <div class="social">
+            <a class="telegram" href="https://t.me/+14bH_CrGbJ1kNTQ9" target="_blank">Telegram</a>
+            <a class="facebook" href="https://www.facebook.com/share/1DusbMij8E/" target="_blank">Facebook</a>
+        </div>
 
-<div class="dragon-text">
-DRAGON ETHICAL ZONE
-</div>
-
-</div>
-
-<div class="name">DRAZON ETHICAL ZONE</div>
-
-<div class="role">Owner & Chief Executive Officer</div>
-
-<div class="about">
-🌐 I'm Dip Chowdhury,<br>
-Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.<br><br>
-
-<b>"We Secure The Digital World"</b><br><br>
-
-I specialize in:<br><br>
-
-• Ethical Hacking<br>
-• Cyber Security Research<br>
-• Vulnerability Testing<br>
-• Bug Hunting<br>
-• Web Development<br>
-• Programming
-</div>
-
-<div class="social">
-
-<a class="telegram" href="https://t.me/+14bH_CrGbJ1kNTQ9" target="_blank">
-Telegram
-</a>
-
-<a class="facebook" href="https://www.facebook.com/share/1DusbMij8E/" target="_blank">
-Facebook
-</a>
-
-</div>
-
-<div class="skills">
-    <div class="skill">Cyber Security</div>
-    <div class="skill">Ethical Hacking</div>
-    <div class="skill">Bug Hunting</div>
-    <div class="skill">Web Development</div>
-</div>
-
-</div>
-
+        <div class="skills">
+            <div class="skill">Cyber Security</div>
+            <div class="skill">Ethical Hacking</div>
+            <div class="skill">Bug Hunting</div>
+            <div class="skill">Web Development</div>
+        </div>
+    </div>
 </div>
 
 <div class="footer">
     Created By Dip © 2026
 </div>
 
-<!-- 🔊 VOICE + MUSIC -->
 <script>
 function speakWelcome(){
     let msg = new SpeechSynthesisUtterance("Welcome to Dragon Ethical Zone");
-
     msg.rate = 0.9;
     msg.pitch = 0.6;
     msg.volume = 1;
 
     let voices = speechSynthesis.getVoices();
-
     let voice = voices.find(v =>
         v.name.toLowerCase().includes("male") ||
         v.name.toLowerCase().includes("david") ||
         v.name.toLowerCase().includes("english")
     );
 
-    if(voice){
-        msg.voice = voice;
-    }
-
+    if(voice) msg.voice = voice;
     speechSynthesis.speak(msg);
 }
 
