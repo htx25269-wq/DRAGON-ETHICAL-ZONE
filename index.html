@@ -59,7 +59,6 @@ body{
     border-radius:10px;
 }
 
-/* 🔥 PROFILE UPDATED (DRAGON LOGO) */
 .profile{
     width:260px;
     height:260px;
@@ -75,14 +74,12 @@ body{
     box-shadow:0 0 40px #ff1e1e;
 }
 
-/* Dragon SVG glow */
 .dragon svg{
     width:120px;
     height:120px;
     filter:drop-shadow(0 0 10px #ff0000);
 }
 
-/* Text under logo */
 .dragon-text{
     font-size:16px;
     font-weight:700;
@@ -134,7 +131,6 @@ body{
     font-size:18px;
 }
 
-/* SOCIAL */
 .social{
     margin-top:35px;
 }
@@ -196,7 +192,6 @@ body{
 
 <div class="grid-bg">
 
-<!-- 🔥 DRAGON LOGO -->
 <div class="profile">
 
 <div class="dragon">
@@ -214,25 +209,17 @@ DRAGON ETHICAL ZONE
 
 </div>
 
-<div class="name">
-    DRAZON ETHICAL ZONE
-</div>
+<div class="name">DRAZON ETHICAL ZONE</div>
 
-<div class="role">
-    Owner & Chief Executive Officer
-</div>
+<div class="role">Owner & Chief Executive Officer</div>
 
 <div class="about">
 🌐 I'm Dip Chowdhury,<br>
-Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.
-<br><br>
+Owner of Dragon Ethical Zone — a dedicated ethical cybersecurity community.<br><br>
 
-<b>"We Secure The Digital World"</b>
+<b>"We Secure The Digital World"</b><br><br>
 
-<br><br>
-
-I specialize in:
-<br><br>
+I specialize in:<br><br>
 
 • Ethical Hacking<br>
 • Cyber Security Research<br>
@@ -245,12 +232,10 @@ I specialize in:
 <div class="social">
 
 <a class="telegram" href="https://t.me/+14bH_CrGbJ1kNTQ9" target="_blank">
-<svg viewBox="0 0 24 24"><path d="M9.993 15.674l-.397 4.96c.568 0 .815-.244 1.112-.537l2.665-2.54 5.527 4.045c1.014.558 1.74.265 1.992-.939l3.63-17.02h.001c.322-1.51-.546-2.1-1.535-1.73L1.4 9.06c-1.47.57-1.45 1.39-.25 1.76l5.08 1.58L18.9 6.3c.63-.39 1.2-.175.73.22"/></svg>
 Telegram
 </a>
 
 <a class="facebook" href="https://www.facebook.com/share/1DusbMij8E/" target="_blank">
-<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.98H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.98A10 10 0 0 0 22 12z"/></svg>
 Facebook
 </a>
 
@@ -270,6 +255,43 @@ Facebook
 <div class="footer">
     Created By Dip © 2026
 </div>
+
+<!-- 🔊 VOICE SYSTEM -->
+<script>
+function speakWelcome(){
+    let msg = new SpeechSynthesisUtterance("Welcome to Dragon Ethical Zone");
+
+    msg.rate = 0.9;
+    msg.pitch = 0.6;
+    msg.volume = 1;
+
+    let voices = speechSynthesis.getVoices();
+
+    let voice = voices.find(v =>
+        v.name.toLowerCase().includes("male") ||
+        v.name.toLowerCase().includes("david") ||
+        v.name.toLowerCase().includes("english")
+    );
+
+    if(voice){
+        msg.voice = voice;
+    }
+
+    speechSynthesis.speak(msg);
+}
+
+// Auto play attempt
+window.addEventListener("load", function(){
+    setTimeout(() => {
+        speakWelcome();
+    }, 800);
+});
+
+// fallback (for mobile browsers)
+document.body.addEventListener("click", function(){
+    speakWelcome();
+}, {once:true});
+</script>
 
 </body>
 </html>
