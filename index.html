@@ -163,10 +163,8 @@ body{
     transform:scale(1.05);
 }
 
-.social svg{
-    width:22px;
-    height:22px;
-    fill:white;
+.skill:hover{
+    transform:scale(1.05);
 }
 
 .footer{
@@ -182,6 +180,11 @@ body{
 </head>
 
 <body>
+
+<!-- 🔊 BACKGROUND HACKER MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/16/audio_c8c8a3c7c5.mp3?filename=dark-techno-ambient-118193.mp3" type="audio/mpeg">
+</audio>
 
 <div class="navbar">
     <div class="logo">Dragon Ethical Zone</div>
@@ -256,7 +259,7 @@ Facebook
     Created By Dip © 2026
 </div>
 
-<!-- 🔊 VOICE SYSTEM -->
+<!-- 🔊 VOICE + MUSIC SYSTEM -->
 <script>
 function speakWelcome(){
     let msg = new SpeechSynthesisUtterance("Welcome to Dragon Ethical Zone");
@@ -280,15 +283,21 @@ function speakWelcome(){
     speechSynthesis.speak(msg);
 }
 
-// Auto play attempt
+// MUSIC
+let music = document.getElementById("bgMusic");
+music.volume = 0.25;
+
+// autoplay attempt
 window.addEventListener("load", function(){
     setTimeout(() => {
+        music.play().catch(()=>{});
         speakWelcome();
     }, 800);
 });
 
-// fallback (for mobile browsers)
+// fallback click
 document.body.addEventListener("click", function(){
+    music.play();
     speakWelcome();
 }, {once:true});
 </script>
