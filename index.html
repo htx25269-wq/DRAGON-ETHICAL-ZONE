@@ -40,12 +40,12 @@ body{
     font-weight:700;
 }
 
-/* Navbar Logo Style */
 .logo img{
     width:45px;
     height:45px;
     border-radius: 50%;
     border: 2px solid #ff1e1e;
+    object-fit: cover;
 }
 
 .menu{
@@ -84,7 +84,6 @@ body{
     box-shadow:0 0 50px #ff1e1e;
 }
 
-/* Main Profile Image */
 .profile-container img{
     width: 100%;
     height: 100%;
@@ -93,7 +92,7 @@ body{
 
 .name{
     margin-top:35px;
-    font-size:58px;
+    font-size:52px;
     color:#1d8fff;
     font-weight:700;
     text-transform: uppercase;
@@ -101,7 +100,7 @@ body{
 
 .role{
     margin-top:10px;
-    font-size:30px;
+    font-size:28px;
     color:#ff7272;
     font-weight:600;
 }
@@ -110,7 +109,7 @@ body{
     max-width:950px;
     margin:40px auto;
     padding:20px;
-    font-size:24px;
+    font-size:22px;
     line-height:1.8;
     color:#d9d9d9;
 }
@@ -125,14 +124,13 @@ body{
 
 .skill{
     display:inline-block;
-    padding:14px 24px;
-    margin:10px;
+    padding:12px 22px;
+    margin:8px;
     border-radius:12px;
     background:#0c1d33;
     border:1px solid #00aaff;
     box-shadow:0 0 15px rgba(0,170,255,0.5);
-    font-size:18px;
-    transition: 0.3s;
+    font-size:16px;
 }
 
 .social{
@@ -144,37 +142,23 @@ body{
     align-items:center;
     gap:10px;
     text-decoration:none;
-    padding:14px 20px;
+    padding:12px 20px;
     margin:10px;
-    border-radius:12px;
+    border-radius:10px;
     color:white;
     font-weight:600;
     font-size:18px;
-    transition:0.3s;
 }
 
-.telegram{
-    background:#0088cc;
-    box-shadow:0 0 15px rgba(0,136,204,0.6);
-}
-
-.facebook{
-    background:#1877f2;
-    box-shadow:0 0 15px rgba(24,119,242,0.6);
-}
-
-.social a:hover, .skill:hover{
-    transform:scale(1.1);
-}
+.telegram{ background:#0088cc; }
+.facebook{ background:#1877f2; }
 
 .footer{
     background:#07101d;
     padding:25px;
     text-align:center;
     color:#00aaff;
-    font-size:18px;
-    margin-top:50px;
-    box-shadow:0 0 15px rgba(0,170,255,0.4);
+    font-size:16px;
 }
 </style>
 </head>
@@ -187,7 +171,7 @@ body{
 
 <div class="navbar">
     <div class="logo">
-        <!-- updated file name here -->
+        <!-- Exact match for your filename -->
         <img src="1000044511_2.jpg" alt="Logo">
         Dragon Ethical Zone
     </div>
@@ -196,9 +180,8 @@ body{
 
 <div class="hero">
     <div class="grid-bg">
-        <!-- updated file name here -->
         <div class="profile-container">
-            <img src="1000044511_2.jpg" alt="Dragon Ethical Zone Profile">
+            <img src="1000044511_2.jpg" alt="Dragon Ethical Zone">
         </div>
 
         <div class="name">Dragon Ethical Zone</div>
@@ -238,13 +221,8 @@ function speakWelcome(){
     msg.rate = 0.9;
     msg.pitch = 0.6;
     msg.volume = 1;
-
     let voices = speechSynthesis.getVoices();
-    let voice = voices.find(v =>
-        v.name.toLowerCase().includes("male") ||
-        v.name.toLowerCase().includes("david")
-    );
-
+    let voice = voices.find(v => v.name.toLowerCase().includes("male") || v.name.toLowerCase().includes("david"));
     if(voice) msg.voice = voice;
     speechSynthesis.speak(msg);
 }
