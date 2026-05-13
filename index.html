@@ -11,6 +11,39 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: #07111f; color: white; text-align: center; overflow-x: hidden; }
 
+        /* Custom Icon Logo without Image File */
+        .dragon-icon {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, #ff1e1e 0%, #0a1629 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #ff1e1e;
+            box-shadow: 0 0 40px rgba(255, 30, 30, 0.7);
+            position: relative;
+        }
+        
+        .dragon-icon i {
+            font-size: 80px;
+            color: white;
+            filter: drop-shadow(0 0 10px #000);
+        }
+
+        .nav-logo-box {
+            width: 35px;
+            height: 35px;
+            background: #ff1e1e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
         .top-nav {
             background: #0a1629;
             padding: 15px;
@@ -21,28 +54,12 @@
             border-bottom: 2px solid #ff1e1e;
         }
 
-        .top-nav .nav-logo {
-            width: 35px; height: 35px;
-            border-radius: 50%;
-            background-image: url('https://raw.githubusercontent.com/htx25269-wq/DRAGON-ETHICAL-ZONE/main/1000044511.jpg');
-            background-size: cover;
-        }
-
         .hero {
             background: linear-gradient(180deg, #1d8fff 0%, #07111f 100%);
             padding: 60px 20px;
         }
 
-        .profile-pic {
-            width: 180px; height: 180px;
-            border-radius: 50%; border: 5px solid #ff1e1e;
-            margin-bottom: 20px;
-            box-shadow: 0 0 30px rgba(255, 30, 30, 0.6);
-            object-fit: cover;
-            content: url('https://raw.githubusercontent.com/htx25269-wq/DRAGON-ETHICAL-ZONE/main/1000044511.jpg');
-        }
-
-        h1 { font-size: 28px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
         .owner-title { color: #ff7272; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
         .bio { max-width: 500px; margin: 0 auto 30px; font-size: 14px; line-height: 1.6; color: #e0e0e0; }
 
@@ -77,22 +94,24 @@
 <body>
 
     <nav class="top-nav">
-        <div class="nav-logo"></div>
+        <div class="nav-logo-box">D</div>
         <span>DRAGON ETHICAL ZONE</span>
     </nav>
 
     <header class="hero">
-        <div class="profile-pic"></div>
+        <div class="dragon-icon">
+            <i class="fas fa-dragon"></i>
+        </div>
+
         <h1>DRAGON ETHICAL ZONE</h1>
         <p class="owner-title">Founder & Chief Executive Officer</p>
         
         <p class="bio">
-            🌐 I'm RM Dip Chowdhury, Founder of Dragon Ethical Zone — a dedicated ethical cybersecurity community। Passionate about cybersecurity education, cyber security research, and strengthening digital security।
+            🌐 I'm RM Dip Chowdhury, Founder of Dragon Ethical Zone — a dedicated ethical cybersecurity community. Passionate about cybersecurity education and strengthening digital security.
         </p>
 
         <div class="stats-container">
             <div class="stat-box"><h2>4.3+</h2><p>Years Experience</p></div>
-            <div class="stat-box"><h2>Unlimited</h2><p>Students Trained</p></div>
             <div class="stat-box"><h2>69+</h2><p>Team Opened</p></div>
         </div>
 
