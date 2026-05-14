@@ -1,132 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragon Ethical Zone | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: #07111f; color: white; text-align: center; overflow-x: hidden; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        /* Custom Icon Logo without Image File */
-        .dragon-icon {
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, #ff1e1e 0%, #0a1629 100%);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 5px solid #ff1e1e;
-            box-shadow: 0 0 40px rgba(255, 30, 30, 0.7);
-            position: relative;
-        }
-        
-        .dragon-icon i {
-            font-size: 80px;
-            color: white;
-            filter: drop-shadow(0 0 10px #000);
-        }
+<title>Dragon Ethical Zone</title>
 
-        .nav-logo-box {
-            width: 35px;
-            height: 35px;
-            background: #ff1e1e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 14px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        .top-nav {
-            background: #0a1629;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            border-bottom: 2px solid #ff1e1e;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        .hero {
-            background: linear-gradient(180deg, #1d8fff 0%, #07111f 100%);
-            padding: 60px 20px;
-        }
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
 
-        h1 { font-size: 28px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
-        .owner-title { color: #ff7272; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
-        .bio { max-width: 500px; margin: 0 auto 30px; font-size: 14px; line-height: 1.6; color: #e0e0e0; }
+/* Background */
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at center, rgba(255,0,0,0.18), transparent 60%),
+    linear-gradient(to bottom, #120000, #000);
+    z-index:-2;
+}
 
-        .stats-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
-        .stat-box {
-            background: rgba(12, 29, 51, 0.8);
-            border: 1px solid #00aaff;
-            padding: 15px; border-radius: 15px; min-width: 140px;
-        }
-        .stat-box h2 { color: #ff1e1e; font-size: 22px; }
-        .stat-box p { font-size: 12px; color: #00aaff; }
+body::after{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    linear-gradient(rgba(255,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,0,0,0.06) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
+}
 
-        .social-icons { display: flex; justify-content: center; gap: 20px; margin: 30px 0 40px; }
-        .social-icons a {
-            background: #0c1d33; width: 50px; height: 50px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; color: white; font-size: 20px;
-            text-decoration: none; border: 1px solid #00aaff; transition: 0.3s;
-        }
-        .social-icons a:hover { background: #ff1e1e; border-color: #ff1e1e; transform: translateY(-5px); }
+/* Navbar */
+nav{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,0,0,0.2);
+}
 
-        .action-btn {
-            background: #ff1e1e; color: white; padding: 12px 40px;
-            border-radius: 30px; text-decoration: none; font-weight: 600;
-            display: inline-block; margin-bottom: 50px;
-            box-shadow: 0 5px 15px rgba(255, 30, 30, 0.4);
-        }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
 
-        footer { padding: 40px; font-size: 12px; color: #444; }
-    </style>
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:2px solid red;
+    box-shadow:0 0 20px red;
+}
+
+.logo h2{
+    font-size:24px;
+    color:#ff2d2d;
+    font-weight:800;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#ff2d2d;
+}
+
+/* Hero Section */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero img{
+    width:300px;
+    max-width:90%;
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(255,0,0,0.8);
+    margin-bottom:30px;
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 20px red;
+    }
+    to{
+        box-shadow:0 0 60px #ff0000;
+    }
+}
+
+.hero h1{
+    font-size:65px;
+    font-weight:800;
+    color:#ff2d2d;
+    margin-bottom:15px;
+    text-shadow:0 0 25px red;
+}
+
+.hero p{
+    font-size:20px;
+    color:#ddd;
+    line-height:1.7;
+}
+
+.hero-btn{
+    margin-top:35px;
+}
+
+.hero-btn a{
+    text-decoration:none;
+    background:#ff1a1a;
+    color:white;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:700;
+    transition:0.3s;
+    box-shadow:0 0 20px red;
+}
+
+.hero-btn a:hover{
+    background:white;
+    color:red;
+    transform:scale(1.05);
+}
+
+/* About */
+.about{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:45px;
+    color:#ff2d2d;
+    margin-bottom:20px;
+    text-shadow:0 0 20px red;
+}
+
+.about p{
+    max-width:900px;
+    margin:auto;
+    font-size:18px;
+    color:#ddd;
+    line-height:1.8;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:60px 8%;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,0,0,0.2);
+    padding:35px 25px;
+    border-radius:20px;
+    transition:0.4s;
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 20px rgba(255,0,0,0.1);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px red;
+}
+
+.card h3{
+    color:#ff2d2d;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+.card p{
+    color:#ddd;
+    line-height:1.7;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,0,0,0.2);
+    background:#080808;
+    margin-top:50px;
+}
+
+footer h3{
+    color:#ff2d2d;
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#bbb;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <nav class="top-nav">
-        <div class="nav-logo-box">D</div>
-        <span>DRAGON ETHICAL ZONE</span>
-    </nav>
+<!-- Navbar -->
+<nav>
 
-    <header class="hero">
-        <div class="dragon-icon">
-            <i class="fas fa-dragon"></i>
-        </div>
+<div class="logo">
+<img src="logo.jpg" alt="Dragon Ethical Zone Logo">
+<h2>Dragon Ethical Zone</h2>
+</div>
 
-        <h1>DRAGON ETHICAL ZONE</h1>
-        <p class="owner-title">Founder & Chief Executive Officer</p>
-        
-        <p class="bio">
-            🌐 I'm RM Dip Chowdhury, Founder of Dragon Ethical Zone — a dedicated ethical cybersecurity community. Passionate about cybersecurity education and strengthening digital security.
-        </p>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
 
-        <div class="stats-container">
-            <div class="stat-box"><h2>4.3+</h2><p>Years Experience</p></div>
-            <div class="stat-box"><h2>69+</h2><p>Team Opened</p></div>
-        </div>
+</nav>
 
-        <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61586438780860" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://t.me/+14bH_CrGbJ1kNTQ9" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://whatsapp.com/dl/" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
+<!-- Hero -->
+<section class="hero">
 
-        <a href="https://t.me/+14bH_CrGbJ1kNTQ9" class="action-btn">Join Community</a>
-    </header>
+<div class="hero-content">
 
-    <footer>
-        DRAGON ETHICAL ZONE &copy; 2026 | Created By Dip
-    </footer>
+<img src="logo.jpg" alt="Dragon Logo">
+
+<h1>DRAGON ETHICAL ZONE</h1>
+
+<p>
+Welcome to Dragon Ethical Zone — A futuristic cyber security &
+ethical learning platform powered by passion, creativity and technology.
+</p>
+
+<div class="hero-btn">
+<a href="#">Explore Now</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- About -->
+<section class="about">
+
+<h2 class="section-title">About Us</h2>
+
+<p>
+Dragon Ethical Zone is a modern cyber inspired platform designed
+for ethical technology learning, security awareness and digital creativity.
+This website is fully optimized for GitHub Pages hosting.
+</p>
+
+</section>
+
+<!-- Cards -->
+<section class="cards">
+
+<div class="card">
+<h3>Cyber Security</h3>
+<p>
+Learn ethical technology concepts with futuristic visuals and modern design.
+</p>
+</div>
+
+<div class="card">
+<h3>Modern Design</h3>
+<p>
+Fully responsive premium UI with glowing red dragon theme.
+</p>
+</div>
+
+<div class="card">
+<h3>GitHub Ready</h3>
+<p>
+Upload directly to GitHub and host easily using GitHub Pages.
+</p>
+</div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+<h3>Dragon Ethical Zone</h3>
+
+<p>Created By Dip</p>
+
+</footer>
 
 </body>
 </html>
